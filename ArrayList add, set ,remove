@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+        
+        ArrayList<String> fruits = new ArrayList<>();
+
+        
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        System.out.println("After add: " + fruits);
+       
+        fruits.set(1, "Mango");
+        System.out.println("After set: " + fruits);
+      
+        fruits.remove(0); // removes "Apple"
+        System.out.println("After remove by index: " + fruits);
+
+        fruits.remove("Cherry");
+        System.out.println("After remove by object: " + fruits);
+    }
+}
