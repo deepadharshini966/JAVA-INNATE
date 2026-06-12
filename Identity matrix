@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+public class IdentityMatrix {
+    public static void main(String[] args) {
+        int n = 4; // size of the matrix (4x4)
+
+        // Create an ArrayList of ArrayLists
+        ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+
+        // Fill the matrix
+        for (int i = 0; i < n; i++) {
+            ArrayList<Integer> row = new ArrayList<>();
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    row.add(1); // diagonal element
+                } else {
+                    row.add(0); // non-diagonal element
+                }
+            }
+            matrix.add(row);
+        }
+
+        // Print the identity matrix using only one loop
+        System.out.println("Identity Matrix:");
+        for (int i = 0; i < n; i++) {
+            // Print each row directly
+            System.out.println(matrix.get(i));
+        }
+    }
+}
