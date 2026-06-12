@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+public class RetainRemoveDemo {
+    public static void main(String[] args) {
+        // First ArrayList
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        fruits.add("Mango");
+        fruits.add("Orange");
+
+        System.out.println("Original list: " + fruits);
+
+        // Second ArrayList for comparison
+        ArrayList<String> compareList = new ArrayList<>();
+        compareList.add("Apple");
+        compareList.add("Mango");
+        compareList.add("Banana");
+
+        System.out.println("Compare list: " + compareList);
+
+        // --- retainAll() ---
+        // Keep only elements that are also in compareList
+        ArrayList<String> retained = new ArrayList<>(fruits); // copy original
+        retained.retainAll(compareList);
+        System.out.println("After retainAll (common elements): " + retained);
+
+        // --- removeAll() ---
+        // Remove all elements that are also in compareList
+        ArrayList<String> removed = new ArrayList<>(fruits); // copy original
+        removed.removeAll(compareList);
+        System.out.println("After removeAll (elements not in compareList): " + removed);
+    }
+}
