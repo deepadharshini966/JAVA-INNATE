@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter a word: ");
+        String a = sc.nextLine();
+        
+        int count = 0;
+        char[] b = a.toCharArray();
+        String str = "aeiouAEIOU";
+        char[] c = str.toCharArray();
+        
+        // Loop through each character of the input string
+        for (int i = 0; i < b.length; i++) {
+            // Compare it against each vowel in the reference array
+            for (int j = 0; j < c.length; j++) {
+                if (b[i] == c[j]) {
+                    count++;
+                }
+            }
+        }
+        
+        System.out.println("Vowel count: " + count);
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a word: ");
+        String str = sc.nextLine();
+        
+        int count = 0;
+        String vow = "aeiouAEIOU";
+        
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            
+            // Checks if the character is present in the vowel string
+            // ("" + ch) converts the character to a string
+            if (vow.contains("" + ch)) {
+                count++;
+            }
+        }
+        
+        System.out.println("Vowel count: " + count);
+        sc.close();
+    }
+} 
