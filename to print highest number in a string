@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "1947";
+        System.out.println(str);
+        
+        String[] arr = str.split("");
+        System.out.println(java.util.Arrays.toString(arr));
+        
+        int max = 0; 
+        
+        for (int i = 0; i < arr.length; i++) {
+            // Fix 1 & 2: Use lowercase 'p' in parseInt AND convert to char to avoid using parseInt completely
+            char ch = arr[i].charAt(0);
+            int num = ch - '0'; 
+            
+            if (num > max) {
+                max = num;
+            }
+        } // Fix 3: Moved the extra brace from here...
+        System.out.println(max);
+    } // ...to here, so the print statement is inside the main method
+}
