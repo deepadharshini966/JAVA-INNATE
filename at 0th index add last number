@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Initialize the outer ArrayList (matrix)
+        ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+
+        // Initialize the base ArrayList 'x' with values [1, 2, 3]
+        ArrayList<Integer> x = new ArrayList<>();
+        x.add(1);
+        x.add(2);
+        x.add(3);
+
+        // Loop to create shifts and add them to the matrix
+        for (int row = 0; row < 3; row++) {
+            // Create a copy of the current state of 'x'
+            ArrayList<Integer> rowCopy = new ArrayList<>();
+            rowCopy.addAll(x);
+            matrix.add(rowCopy);
+
+            // Logic to shift the last element to the front
+            // ln = last number
+            int ln = x.remove(2); 
+            x.add(0, ln); // Add the last number at the 0th index
+        }
+
+        // Output the result in the format shown in notes
+        System.out.print("[");
+        System.out.print(matrix.get(0) + ", ");
+        System.out.print(matrix.get(1) + ", ");
+        System.out.print(matrix.get(2));
+        System.out.println("]");
+    }
+}
