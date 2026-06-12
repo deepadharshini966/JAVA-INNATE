@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ArrayWithDefaults {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Define array size (4 default + 5 user input)
+        int size = 9;
+        int[] arr = new int[size];
+
+        // First 4 numbers are default
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+
+        // Remaining 5 numbers from user
+        System.out.println("Enter 5 numbers:");
+        for (int i = 4; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Print the array
+        System.out.println("Final array:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
