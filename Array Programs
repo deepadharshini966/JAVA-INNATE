@@ -1,0 +1,136 @@
+public class MoveZerosToEnd {
+    public static void main(String[] args) {
+        // Initialize the array
+        int[] n = {1, 0, 2, 0, 3, 0, 4};
+        int zeroCount = 0;
+
+        // Loop 1: Print non-zero elements and count the zeros
+        for (int i = 0; i < 7; i++) {
+            if (n[i] != 0) {
+                System.out.print(n[i] + ", ");
+            } else {
+                zeroCount++;
+            }
+        }
+
+        // Loop 2: Print the zeros at the end with comma formatting
+        for (int i = 0; i < zeroCount; i++) {
+            if (i < zeroCount - 1) {
+                System.out.print("0, ");
+            } else {
+                System.out.print("0");
+            }
+        }
+        
+        // Print a new line at the end
+        System.out.println();
+    }
+}
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter 4 numbers: ");
+        
+        // Initializes a 3x3 ragged array using a mix of hardcoded values and user inputs
+        int[][] m = {
+            {1, 2, 3}, 
+            {4, 5, sc.nextInt()}, 
+            {sc.nextInt(), sc.nextInt(), sc.nextInt()}
+        };
+        
+        System.out.println("The Matrix is:");
+        
+        // Loop to print the 3x3 matrix
+        for (int i = 0; i < 3; i++) {
+            System.out.println(m[i][0] + " " + m[i][1] + " " + m[i][2]);
+        }
+        
+        sc.close(); // Good practice to close the scanner
+    }
+}
+
+
+
+
+class Main {
+    public static void main(String[] args) {
+        int[][] m = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int[][] n = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int sum = 0;
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < n.length; j++) {
+                // This overwrites 'sum' on each iteration
+                sum = m[i][j] + n[i][j]; 
+            }
+        }
+
+        // Prints the final value stored in sum (9 + 9 = 18)
+        System.out.print(sum);
+        System.out.println();
+    }
+}
+
+
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Initialize the 3x3 matrix
+        int[][] m = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("The Transposed Matrix is:");
+        
+        // Nested loops to print the transpose by swapping row and column indices
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                // Accessing m[j][i] instead of m[i][j] creates the transpose
+                System.out.print(m[j][i] + " ");
+            }
+            System.out.println(); // Moves to the next row
+        }
+        
+        sc.close(); // Clean up scanner resource
+    }
+}
+
+
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 6, 8, 10};
+
+        // Nested loops to find pairs of elements
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                // Ensures an element is not paired with itself
+                if (i != j) {
+                    System.out.println("pair: [" + arr[i] + "," + arr[j] + "]");
+                }
+            }
+        }
+    }
+}
