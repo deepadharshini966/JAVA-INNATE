@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class EasyPangram {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  // Create Scanner object
+        System.out.println("Enter a sentence:");  
+        String sentence = sc.nextLine();      // Read sentence from user
+
+        sentence = sentence.toLowerCase();
+
+        boolean pangram = true;
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (sentence.indexOf(ch) == -1) {
+                pangram = false;
+                break;
+            }
+        }
+
+        if (pangram) {
+            System.out.println("It is a pangram.");
+        } else {
+            System.out.println("It is NOT a pangram.");
+        }
+
+        sc.close();  // Close scanner
+    }
+}
