@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class ArrayListMethodsDemo {
+    public static void main(String[] args) {
+        ArrayList<String> fruits = new ArrayList<>();
+
+        // --- add() ---
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        System.out.println("After add: " + fruits);
+
+        // --- set() ---
+        fruits.set(1, "Mango"); // replace Banana with Mango
+        System.out.println("After set: " + fruits);
+
+        // --- remove() ---
+        fruits.remove("Cherry"); // remove by object
+        fruits.remove(0);        // remove by index (Apple)
+        System.out.println("After remove: " + fruits);
+
+        // --- contains() ---
+        System.out.println("Contains Mango? " + fruits.contains("Mango"));
+
+        // --- size() ---
+        System.out.println("Size: " + fruits.size());
+
+        // --- isEmpty() ---
+        System.out.println("Is empty? " + fruits.isEmpty());
+
+        // --- addAll() ---
+        fruits.addAll(Arrays.asList("Orange", "Grapes", "Apple", "Apple"));
+        System.out.println("After addAll: " + fruits);
+
+        // --- indexOf() vs lastIndexOf() ---
+        System.out.println("First index of Apple (indexOf): " + fruits.indexOf("Apple"));
+        System.out.println("Last index of Apple (lastIndexOf): " + fruits.lastIndexOf("Apple"));
+        System.out.println("Index of Orange: " + fruits.indexOf("Orange"));
+        System.out.println("Index of Pineapple: " + fruits.indexOf("Pineapple")); // not found (-1)
+
+        // --- subList() ---
+        System.out.println("Sublist (1 to 3): " + fruits.subList(1, 3));
+
+        // --- for-each loop ---
+        System.out.print("Iterating with for-each: ");
+        for (String fruit : fruits) {
+            System.out.print(fruit + " ");
+        }
+        System.out.println();
+
+        // --- forEach method (lambda) ---
+        System.out.print("Iterating with forEach method: ");
+        fruits.forEach(fruit -> System.out.print(fruit + " "));
+        System.out.println();
+
+        // --- clear() ---
+        fruits.clear();
+        System.out.println("After clear: " + fruits);
+    }
+}
