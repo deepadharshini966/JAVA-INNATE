@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Merge {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of arrays: ");
+        int size = sc.nextInt();
+
+        int[] arr1 = new int[size];
+        int[] arr2 = new int[size];
+
+        System.out.println("Enter elements of 1st array:");
+        for (int i = 0; i < size; i++) {
+            arr1[i] = sc.nextInt();
+        }
+
+        System.out.println("Enter elements of 2nd array:");
+        for (int i = 0; i < size; i++) {
+            arr2[i] = sc.nextInt();
+        }
+
+        // Merge arrays
+        int[] arr3 = new int[arr1.length + arr2.length];
+        System.arraycopy(arr1, 0, arr3, 0, arr1.length);
+        System.arraycopy(arr2, 0, arr3, arr1.length, arr2.length);
+
+        // Sort merged array
+        Arrays.sort(arr3);
+
+        System.out.println("Merged and sorted array: " + Arrays.toString(arr3));
+
+        // Find smallest and largest
+        int firstSmallest = arr3[0];
+        int secondSmallest = arr3[1];
+        int firstLargest = arr3[arr3.length - 1];
+        int secondLargest = arr3[arr3.length - 2];
+
+        System.out.println("First smallest: " + firstSmallest);
+        System.out.println("Second smallest: " + secondSmallest);
+        System.out.println("First largest: " + firstLargest);
+        System.out.println("Second largest: " + secondLargest);
+    }
+}
