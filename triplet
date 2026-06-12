@@ -1,0 +1,25 @@
+public class Triplet {
+    public static void main(String[] args) {
+        int[] arr = {12, 3, 4, 1, 6, 9};
+        int target = 24;
+        int count = 0;
+
+        // Check all possible triplets
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                for (int k = j + 1; k < arr.length; k++) {
+                    int sum = arr[i] + arr[j] + arr[k];
+                    if (sum == target) {
+                        System.out.println("Triplet: " + arr[i] + ", " + arr[j] + ", " + arr[k]);
+                        System.out.println("Sum = " + sum);
+                        count++;
+                    }
+                }
+            }
+        }
+
+        if (count == 0) {
+            System.out.println("No triplet found with sum " + target);
+        }
+    }
+}
