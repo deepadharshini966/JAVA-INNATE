@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class A {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter the total : ");
+        int total = sc.nextInt();
+        
+        ArrayList<Integer> numbers = new ArrayList<>();
+        
+        for (int i = 1; i <= total; i++) {
+            // Check if the number is odd
+            if (i % 2 != 0) {
+                numbers.add(i);
+            }
+        }
+        
+        System.out.println(numbers);
+    }
+}
